@@ -9,7 +9,7 @@ import UIKit
 
 
 @IBDesignable
-class ShadowView: UIImageView {
+class ShadowView: UIView {
     
     
     @IBInspectable var shadowColor: UIColor? {
