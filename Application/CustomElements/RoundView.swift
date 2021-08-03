@@ -43,8 +43,9 @@ class RoundImageView: UIImageView {
     }
 
 }
-//
-//
+
+// MARK: - Мои попытки
+
 //@IBDesignable
 //class RoundImageView: UIImageView {
 //
