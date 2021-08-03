@@ -12,7 +12,8 @@ class FriendTableViewCell: UITableViewCell {
     // MARK: - Аутлеты
     
     
-    @IBOutlet var friendImage: UIImageView!
+ 
+    @IBOutlet var imageContainer: UIView!
     @IBOutlet var friendName: UILabel!
-    
+    @IBOutlet var friendImage: UIImageView!
 }
