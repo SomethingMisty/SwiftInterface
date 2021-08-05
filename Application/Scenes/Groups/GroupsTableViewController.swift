@@ -11,12 +11,9 @@ class GroupsTableViewController: UITableViewController {
 
     @IBOutlet var groupTableView: UITableView!
     
-    private let cellID = "GroupTableViewCell"
     
-    var group = [Group(name: "SUV", image: UIImage(named: "SUV")),
-                 Group(name: "Театрзакрыт", image: UIImage(named: "teatr")),
-                 Group(name: "reddit", image: UIImage(named: "Reddit")),
-                 Group(name: "why", image: UIImage(named: "Why"))]
+    
+    var group = Group.allGroups
     
     
     
@@ -34,13 +31,19 @@ class GroupsTableViewController: UITableViewController {
     }
     
     
+    private struct GroupConstants {
+        static let cellID = "GroupTableViewCell"
+    }
+    
+    
+    
     /// возвращает количество заполненных ячеек
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return group.count
     }
     /// воводит информацию в ячейки
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? GroupTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupConstants.cellID, for: indexPath) as? GroupTableViewCell else {
             fatalError("{Message: Error in dequeue GroupsTableViewController}")
         }
         cell.imageGroup.image = group[indexPath.row].image

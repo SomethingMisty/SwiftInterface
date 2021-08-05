@@ -11,35 +11,32 @@ class FriendsTableViewController: UITableViewController {
 
     // MARK: - Аутлеты
     
-    @IBOutlet var friendsTableView: UITableView!
+    @IBOutlet private var friendsTableView: UITableView!
     
     
     // MARK: - Свойства
-    
-    /// идентификатор для ячейки
-    private let cellID = "FriendTableViewCell"
+
     /// массив с человеками
-    var people = [Name(name: "Роман Демидов", image: UIImage(named: "Roma")),
-                 Name(name: "Кирилл Орлов", image: UIImage(named: "Kirill")),
-                 Name(name: "Клим Беларусов", image: UIImage(named: "Klim")),
-                 Name(name: "Ксюша Корниенко", image: UIImage(named: "Ksusha")),
-                 Name(name: "Николай Люкшин", image: UIImage(named: "Kolya")),
-                 Name(name: "Георгий Алигафренович", image: UIImage(named: "Gosha"))]
+    var people = Friends.allFriends
     
     /// выход и добавление выбранного города
     @IBAction func goBackFromAvaliableFriends(with segue: UIStoryboardSegue) {
         guard let avaliableVC = segue.source as? AddFriendTableViewController,
               let indexPath = avaliableVC.tableView.indexPathForSelectedRow else { return }
-        let newFriend = avaliableVC.people[indexPath.row]
+        let newFriend = avaliableVC.people[indexPath.row]/// в newfriend передается нажатая ячейка
         
         guard !people.contains(where: { $0.name == newFriend.name}) else {return}
              
 
         people.append(newFriend)
         friendsTableView.reloadData()
-            
     }
     
+    
+    private struct FriendsConstants {
+        /// идентификатор для ячейки
+        static let cellID = "FriendTableViewCell"
+    }
   
     /// возвращает количество заполненных ячеек
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +44,8 @@ class FriendsTableViewController: UITableViewController {
     }
     /// воводит информацию в ячейки
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? FriendTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsConstants.cellID,
+                                                    for: indexPath) as? FriendTableViewCell else {
             fatalError("{Message: Error in dequeue FriendTableViewCell}")
         }
         cell.friendImage.image = people[indexPath.row].image

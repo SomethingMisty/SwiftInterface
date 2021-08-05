@@ -194,24 +194,10 @@
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="teatr" id="B3E-CZ-Qa2" customClass="ShadowView" customModule="Application" customModuleProvider="target">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="teatr" id="B3E-CZ-Qa2">
                                             <rect key="frame" x="20" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                    <color key="value" systemColor="systemPurpleColor"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                    <real key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                    <real key="value" value="40"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                    <size key="value" width="0.0" height="0.0"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -310,24 +296,34 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FullScreenImageCollectionViewCell" id="Noa-IU-07S" customClass="FullScreenImageCollectionViewCell" customModule="Application" customModuleProvider="target">
                                 <rect key="frame" x="7" y="0.0" width="400" height="429"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" insetsLayoutMarginsFromSafeArea="NO" id="H38-Qw-tHp">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="H38-Qw-tHp">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="429"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-Lh-XNP">
-                                            <rect key="frame" x="5" y="5" width="390" height="419"/>
+                                            <rect key="frame" x="5" y="5" width="390" height="394"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b59-hn-Au5">
+                                            <rect key="frame" x="360" y="404" width="30" height="20"/>
+                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="hfL-Lh-XNP" secondAttribute="bottom" constant="5" id="ifF-cE-2GY"/>
+                                        <constraint firstAttribute="trailing" secondItem="b59-hn-Au5" secondAttribute="trailing" constant="10" id="95q-Yf-57i"/>
+                                        <constraint firstItem="b59-hn-Au5" firstAttribute="top" secondItem="hfL-Lh-XNP" secondAttribute="bottom" constant="5" id="WVP-KX-2Rz"/>
+                                        <constraint firstAttribute="bottom" secondItem="b59-hn-Au5" secondAttribute="bottom" constant="5" id="bGa-Sy-C78"/>
+                                        <constraint firstAttribute="bottom" secondItem="hfL-Lh-XNP" secondAttribute="bottom" constant="30" id="ifF-cE-2GY"/>
                                         <constraint firstAttribute="trailing" secondItem="hfL-Lh-XNP" secondAttribute="trailing" constant="5" id="sZL-Ad-CNf"/>
                                         <constraint firstItem="hfL-Lh-XNP" firstAttribute="leading" secondItem="H38-Qw-tHp" secondAttribute="leading" constant="5" id="wFV-ST-3Oc"/>
                                         <constraint firstItem="hfL-Lh-XNP" firstAttribute="top" secondItem="H38-Qw-tHp" secondAttribute="top" constant="5" id="zPi-sy-Edl"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="400" height="429"/>
                                 <connections>
                                     <outlet property="imageFull" destination="hfL-Lh-XNP" id="Wfs-YZ-Yrs"/>
+                                    <outlet property="likeButtonOutlet" destination="b59-hn-Au5" id="IT1-96-qAP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -343,55 +339,87 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNX-mP-8Cq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3677" y="544"/>
+            <point key="canvasLocation" x="3676.811594202899" y="543.75"/>
         </scene>
         <!--Friends Table View Controller-->
         <scene sceneID="sIp-3B-br9">
             <objects>
                 <tableViewController id="ioa-rM-HWd" customClass="FriendsTableViewController" customModule="Application" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="khq-D1-GEP">
+                    <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="khq-D1-GEP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" textLabel="zB2-hh-lqY" imageView="BBH-0p-Jfx" style="IBUITableViewCellStyleDefault" id="G6T-C6-nIQ" customClass="FriendTableViewCell" customModule="Application" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="FriendTableViewCell" id="G6T-C6-nIQ" customClass="FriendTableViewCell" customModule="Application" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="60.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G6T-C6-nIQ" id="43i-zA-TwB" customClass="FriendTableViewCell" customModule="Application" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G6T-C6-nIQ" id="43i-zA-TwB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ксения Корниенко" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zB2-hh-lqY">
-                                            <rect key="frame" x="79" y="0.0" width="315" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGX-FI-69Y">
+                                            <rect key="frame" x="65.5" y="21" width="338.5" height="19"/>
                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Alena" id="BBH-0p-Jfx">
-                                            <rect key="frame" x="20" y="0.0" width="44" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-zf-Pds" customClass="ShadowView" customModule="Application" customModuleProvider="target">
+                                            <rect key="frame" x="5" y="5" width="50.5" height="50.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alena" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-bR-wnP" customClass="RoundImageView" customModule="Application" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50.5" height="50.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="inspectRound" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eV2-bR-wnP" secondAttribute="trailing" id="1cH-GE-ohn"/>
+                                                <constraint firstAttribute="bottom" secondItem="eV2-bR-wnP" secondAttribute="bottom" id="3zY-ik-NjT"/>
+                                                <constraint firstItem="eV2-bR-wnP" firstAttribute="top" secondItem="tkH-zf-Pds" secondAttribute="top" id="CZE-cE-0wt"/>
+                                                <constraint firstItem="eV2-bR-wnP" firstAttribute="leading" secondItem="tkH-zf-Pds" secondAttribute="leading" id="H7P-zx-2JU"/>
+                                                <constraint firstAttribute="width" priority="999" constant="50" id="aqR-Ph-kUd"/>
+                                                <constraint firstAttribute="width" secondItem="tkH-zf-Pds" secondAttribute="height" multiplier="1:1" priority="999" id="dqi-UJ-a0w"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="150"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                    <point key="value" x="0.0" y="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </imageView>
+                                        </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tkH-zf-Pds" secondAttribute="bottom" constant="5" id="0OX-3C-hNn"/>
+                                        <constraint firstItem="tkH-zf-Pds" firstAttribute="leading" secondItem="43i-zA-TwB" secondAttribute="leading" constant="5" id="7FF-wl-wTh"/>
+                                        <constraint firstItem="nGX-FI-69Y" firstAttribute="leading" secondItem="tkH-zf-Pds" secondAttribute="trailing" constant="10" id="8wb-HX-1l0"/>
+                                        <constraint firstItem="nGX-FI-69Y" firstAttribute="centerY" secondItem="tkH-zf-Pds" secondAttribute="centerY" id="BrU-gB-tjv"/>
+                                        <constraint firstItem="tkH-zf-Pds" firstAttribute="top" secondItem="43i-zA-TwB" secondAttribute="top" constant="5" id="Mlh-8b-Imc"/>
+                                        <constraint firstAttribute="trailing" secondItem="nGX-FI-69Y" secondAttribute="trailing" constant="10" id="pRo-Fj-x7K"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="friendImage" destination="BBH-0p-Jfx" id="z7f-mw-dXl"/>
-                                    <outlet property="friendName" destination="zB2-hh-lqY" id="zON-C6-Dbt"/>
+                                    <outlet property="friendImage" destination="eV2-bR-wnP" id="fwY-0i-53r"/>
+                                    <outlet property="friendName" destination="nGX-FI-69Y" id="ma5-ys-XIA"/>
+                                    <outlet property="imageContainer" destination="tkH-zf-Pds" id="we5-dQ-3zf"/>
                                     <segue destination="wqY-sT-fiH" kind="show" identifier="pushImage" id="jSK-kO-YG0"/>
                                 </connections>
                             </tableViewCell>
@@ -528,10 +556,7 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="B3E-CZ-Qa2">
-            <size key="intrinsicContentSize" width="200" height="200"/>
-        </designable>
-        <designable name="BBH-0p-Jfx">
+        <designable name="eV2-bR-wnP">
             <size key="intrinsicContentSize" width="200" height="200"/>
         </designable>
     </designables>
@@ -549,9 +574,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

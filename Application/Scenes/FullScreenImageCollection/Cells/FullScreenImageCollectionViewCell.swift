@@ -7,8 +7,11 @@
 
 import UIKit
 
-class FullScreenImageCollectionViewCell: UICollectionViewCell {
+class FullScreenImageCollectionViewCell: UICollectionViewCell  {
     
     @IBOutlet var imageFull: UIImageView!
     
+
+    @IBOutlet var likeButtonOutlet: UIButton!
+
 }
