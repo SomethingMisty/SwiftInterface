@@ -13,7 +13,7 @@ class FriendTableViewCell: UITableViewCell {
     
     
  
-    @IBOutlet var imageContainer: UIView!
     @IBOutlet var friendName: UILabel!
+    @IBOutlet var imageContainer: UIView!
     @IBOutlet var friendImage: UIImageView!
 }
