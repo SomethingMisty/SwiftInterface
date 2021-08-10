@@ -26,6 +26,7 @@
 		426B7C9A26B97B6100997434 /* CustomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B7C9926B97B6100997434 /* CustomProtocols.swift */; };
 		4276122E26B6AC85002704DE /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276122D26B6AC85002704DE /* ShadowView.swift */; };
 		4276123026B6C2C0002704DE /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276122F26B6C2C0002704DE /* RoundView.swift */; };
+		4289C24526C16FD300731D4F /* newsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289C24426C16FD300731D4F /* newsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		426B7C9926B97B6100997434 /* CustomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProtocols.swift; sourceTree = "<group>"; };
 		4276122D26B6AC85002704DE /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		4276122F26B6C2C0002704DE /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		4289C24426C16FD300731D4F /* newsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		4206340026B2ABE6000B6224 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4289C24326C16FAD00731D4F /* News */,
 				4206340126B2ABED000B6224 /* Login */,
 				4206341F26B2D37D000B6224 /* FullScreenImageCollection */,
 				4206340326B2AE58000B6224 /* Friends */,
@@ -210,6 +213,14 @@
 			path = CustomElements;
 			sourceTree = "<group>";
 		};
+		4289C24326C16FAD00731D4F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				4289C24426C16FD300731D4F /* newsTableViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +302,7 @@
 				4241D1D326A8965A0003AAD9 /* SceneDelegate.swift in Sources */,
 				4206342A26B2EACC000B6224 /* AvaliableGroupsTableViewController.swift in Sources */,
 				4206342526B2D553000B6224 /* FullScreenImageCollectionViewCell.swift in Sources */,
+				4289C24526C16FD300731D4F /* newsTableViewController.swift in Sources */,
 				4276122E26B6AC85002704DE /* ShadowView.swift in Sources */,
 				4206341426B2B7D2000B6224 /* FriendsTableViewController.swift in Sources */,
 				4206341726B2C0F4000B6224 /* Name.swift in Sources */,
