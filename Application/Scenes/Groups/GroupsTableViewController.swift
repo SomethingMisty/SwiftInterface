@@ -8,13 +8,15 @@
 import UIKit
 
 class GroupsTableViewController: UITableViewController {
+    
 
+    
+    
     @IBOutlet var groupTableView: UITableView!
     
     
     
     var group = Group.allGroups
-    
     
     
     @IBAction func goBackFromAvaliableFriends(with segue: UIStoryboardSegue) {
@@ -34,7 +36,6 @@ class GroupsTableViewController: UITableViewController {
     private struct GroupConstants {
         static let cellID = "GroupTableViewCell"
     }
-    
     
     
     /// возвращает количество заполненных ячеек
@@ -68,5 +69,9 @@ class GroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+
 
 }
+
+
