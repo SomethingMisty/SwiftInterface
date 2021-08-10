@@ -14,12 +14,9 @@ class AddFriendTableViewController: UITableViewController {
     @IBOutlet var FriendAddTableView: UITableView!
     // MARK: - Свойства
     private let avaliableID = "FriendTableViewCell"
-    
-    var people = [Name(name: "Анастасия Прокопьева", image: UIImage(named: "Nastya")),
-                 Name(name: "Илья Корниенко", image: UIImage(named: "Ilya")),
-                 Name(name: "Алексей Червонов", image: UIImage(named: "Alexey")),
-                 Name(name: "Алена Косоурова", image: UIImage(named: "Alena"))
-    ]
+    /// массив с доступными друзьяшками
+    var people = Friends.availableFriends
+
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
