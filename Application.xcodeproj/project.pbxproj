@@ -23,8 +23,12 @@
 		4241D1D826A8965A0003AAD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4241D1D626A8965A0003AAD9 /* Main.storyboard */; };
 		4241D1DA26A8965B0003AAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4241D1D926A8965B0003AAD9 /* Assets.xcassets */; };
 		4241D1DD26A8965B0003AAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4241D1DB26A8965B0003AAD9 /* LaunchScreen.storyboard */; };
+		426A58A826C28CDB00353A66 /* ParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426A58A726C28CDB00353A66 /* ParallaxViewController.swift */; };
+		426A58AD26C29EA500353A66 /* newsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426A58AC26C29EA500353A66 /* newsScrollView.swift */; };
+		426B7C9A26B97B6100997434 /* CustomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B7C9926B97B6100997434 /* CustomProtocols.swift */; };
 		4276122E26B6AC85002704DE /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276122D26B6AC85002704DE /* ShadowView.swift */; };
 		4276123026B6C2C0002704DE /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276122F26B6C2C0002704DE /* RoundView.swift */; };
+		4289C24526C16FD300731D4F /* newsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289C24426C16FD300731D4F /* newsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +50,12 @@
 		4241D1D926A8965B0003AAD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4241D1DC26A8965B0003AAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4241D1DE26A8965B0003AAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		426A58A726C28CDB00353A66 /* ParallaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxViewController.swift; sourceTree = "<group>"; };
+		426A58AC26C29EA500353A66 /* newsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsScrollView.swift; sourceTree = "<group>"; };
+		426B7C9926B97B6100997434 /* CustomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProtocols.swift; sourceTree = "<group>"; };
 		4276122D26B6AC85002704DE /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		4276122F26B6C2C0002704DE /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		4289C24426C16FD300731D4F /* newsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		4206340026B2ABE6000B6224 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4289C24326C16FAD00731D4F /* News */,
 				4206340126B2ABED000B6224 /* Login */,
 				4206341F26B2D37D000B6224 /* FullScreenImageCollection */,
 				4206340326B2AE58000B6224 /* Friends */,
@@ -191,6 +200,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		426A58A926C297D700353A66 /* NewsClasses */ = {
+			isa = PBXGroup;
+			children = (
+				426A58AC26C29EA500353A66 /* newsScrollView.swift */,
+			);
+			path = NewsClasses;
+			sourceTree = "<group>";
+		};
 		4276122626B693FD002704DE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +220,19 @@
 			children = (
 				4276122D26B6AC85002704DE /* ShadowView.swift */,
 				4276122F26B6C2C0002704DE /* RoundView.swift */,
+				426B7C9926B97B6100997434 /* CustomProtocols.swift */,
+				426A58A726C28CDB00353A66 /* ParallaxViewController.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		4289C24326C16FAD00731D4F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				426A58A926C297D700353A66 /* NewsClasses */,
+				4289C24426C16FD300731D4F /* newsTableViewController.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +305,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426B7C9A26B97B6100997434 /* CustomProtocols.swift in Sources */,
+				426A58A826C28CDB00353A66 /* ParallaxViewController.swift in Sources */,
 				4206341B26B2CA36000B6224 /* AddFriendTableViewController.swift in Sources */,
 				4206342126B2D406000B6224 /* FullScreenImageCollectionViewController.swift in Sources */,
 				4206341226B2B4F5000B6224 /* GroupTableViewCell.swift in Sources */,
@@ -287,6 +317,8 @@
 				4241D1D326A8965A0003AAD9 /* SceneDelegate.swift in Sources */,
 				4206342A26B2EACC000B6224 /* AvaliableGroupsTableViewController.swift in Sources */,
 				4206342526B2D553000B6224 /* FullScreenImageCollectionViewCell.swift in Sources */,
+				4289C24526C16FD300731D4F /* newsTableViewController.swift in Sources */,
+				426A58AD26C29EA500353A66 /* newsScrollView.swift in Sources */,
 				4276122E26B6AC85002704DE /* ShadowView.swift in Sources */,
 				4206341426B2B7D2000B6224 /* FriendsTableViewController.swift in Sources */,
 				4206341726B2C0F4000B6224 /* Name.swift in Sources */,
