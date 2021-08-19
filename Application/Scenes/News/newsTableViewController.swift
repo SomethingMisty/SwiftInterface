@@ -44,13 +44,18 @@ class newsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Функции
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "newCell" , for: indexPath) as? NewsTableViewCell else {
+            fatalError("{Message: Error in dequeue GroupsTableViewController}")
+        }
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
+    
+
     
     
     private func initialiseViews() {

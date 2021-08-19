@@ -28,10 +28,11 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
               let indexPath = avaliableVC.tableView.indexPathForSelectedRow else { return }
         let newGroup = avaliableVC.group[indexPath.row]
         
-        guard !group.contains(where: { $0.name == newGroup.name}) else {return}
+        guard !filteredData.contains(where: { $0.name == newGroup.name}) else {return}
              
 
         group.append(newGroup)
+        filteredData.append(newGroup)
         groupTableView.reloadData()
             
     }
@@ -75,9 +76,12 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            let deletedFriend = group[indexPath.row]
+            let deletedFriend = filteredData[indexPath.row]
+            filteredData.remove(at: indexPath.row)
+            let deletedFriendFor2 = group[indexPath.row]
             group.remove(at: indexPath.row)
             print(deletedFriend.name)
+            print(deletedFriendFor2.name)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         default:
             return
